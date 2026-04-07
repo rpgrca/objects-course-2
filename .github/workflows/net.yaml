@@ -36,7 +36,7 @@ jobs:
       run: coverlet CSharp/C2-${{ matrix.project }}/${{ matrix.project }}.UnitTests/bin/Debug/net9/${{ matrix.project }}.UnitTests.dll --target "dotnet" --targetargs "test CSharp/C2-${{ matrix.project }}/${{ matrix.project }}.UnitTests/${{ matrix.project }}.UnitTests.csproj --no-build --verbosity quiet" --format OpenCover --output ${{ matrix.project }}.coverage.xml
 
     - name: Upload coverage to CodeCov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
